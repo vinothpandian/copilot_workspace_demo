@@ -48,6 +48,11 @@ create_environment:
 	@echo ">>> New virtualenv created. Activate with:\nworkon $(PROJECT_NAME)"
 	
 
+## Download MNIST dataset
+.PHONY: download_mnist
+download_mnist:
+	$(PYTHON_INTERPRETER) copilot_workspace_demo/dataset.py
+
 
 
 #################################################################################
