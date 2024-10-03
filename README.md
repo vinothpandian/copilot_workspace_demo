@@ -13,11 +13,7 @@ A short description of the project.
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
+│   �
 ├── docs               <- A default mkdocs project; see www.mkdocs.org for details
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
@@ -32,30 +28,60 @@ A short description of the project.
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
+│   �
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── copilot_workspace_demo   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes copilot_workspace_demo a Python module
+�   �   ├── __init__.py             <- Makes copilot_workspace_demo a Python module
     │
     ├── config.py               <- Store useful variables and configuration
     │
     ├── dataset.py              <- Scripts to download or generate data
     │
-    ├── features.py             <- Code to create features for modeling
+    �   ├── features.py             <- Code to create features for modeling
     │
     ├── modeling                
     │   ├── __init__.py 
     │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
+    │   �   └── train.py            <- Code to train models
+    │   └── train_resnet18.py   <- Code to finetune resnet18 model
     │
     └── plots.py                <- Code to create visualizations
 ```
 
 --------
 
+## How to run the training script
+
+To finetune the resnet18 model using the provided training script, follow these steps:
+
+1. Ensure you have the necessary dependencies installed. You can install them using the following command:
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Prepare your dataset and place it in the `data/train` directory. The directory structure should be as follows:
+   ```
+   data/
+       train/
+           class1/
+               img1.jpg
+               img2.jpg
+               ...
+           class2/
+               img1.jpg
+               img2.jpg
+               ...
+           ...
+   ```
+
+3. Run the training script:
+   ```
+   python copilot_workspace_demo/modeling/train.py
+   ```
+
+4. The trained model will be saved in the `models` directory as `resnet18_finetuned.pth`.
+
+5. You can evaluate the model using the validation data by running the script and checking the printed metrics.

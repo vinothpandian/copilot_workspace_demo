@@ -48,6 +48,11 @@ create_environment:
 	@echo ">>> New virtualenv created. Activate with:\nworkon $(PROJECT_NAME)"
 	
 
+## Train the model
+.PHONY: train
+train:
+	$(PYTHON_INTERPRETER) copilot_workspace_demo/modeling/train.py
+
 
 
 #################################################################################
