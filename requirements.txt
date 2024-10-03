@@ -4,3 +4,5 @@ isort
 pip
 python-dotenv
 -e .
+tensorflow
+keras
